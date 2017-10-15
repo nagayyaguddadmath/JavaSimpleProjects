@@ -1,0 +1,11 @@
+Manifest-Version: 1.0
+Implementation-Title: windows file text search
+Implementation-Version: 0.0.1-SNAPSHOT
+Built-By: nagayya
+Implementation-Vendor-Id: com.filesearch
+Build-Jdk: 1.8.0_111
+Implementation-URL: http://projects.spring.io/spring-boot/windowssearc
+ h/
+Created-By: Maven Integration for Eclipse
+Implementation-Vendor: Pivotal Software, Inc.
+
