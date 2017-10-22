@@ -1,0 +1,217 @@
+
+
+  var app = angular.module("manage", []);
+         
+            //Controller Part
+            app.controller("ContactController", function($scope, $http) {
+
+			
+                $scope.contacts = [];
+                $scope.contactForm = {
+                    id : -1,
+                    name : "",
+                    phone_number : "",
+                    address : ""
+                };
+
+
+			_refreshcontactData();
+
+			 
+			 
+			 $scope.submitContact = function() {
+					alert("SUbmitting");
+                    var method = "";
+                    var url = "";
+                    if ($scope.contactForm.id == -1) {
+                        method = "POST";
+                        url = 'http://localhost:8080/addContact';
+                    } else {
+                        method = "POST";
+                        url = 'http://localhost:8080/addContact';
+                    }
+         
+                    $http({
+                        method : method,
+                        url : url,
+                        data : angular.toJson($scope.contactForm),
+                        headers : {
+                            'Content-Type' : 'application/json'
+                        }
+                    }).then( _success, _error );
+                };
+         
+                //HTTP DELETE- delete contact by Id
+                $scope.deleteContact = function(contact) {
+                    $http({
+                        method : 'POST',
+                        url : 'http://localhost:8080/removeContact'
+                    }).then(_success, _error);
+                };
+ 
+             // In case of edit, populate form fields and assign form.id with contact id
+                $scope.editContact = function(contact) {
+                  
+                    $scope.contactForm.name = contact.name;
+                    $scope.contactForm.phone_number = contact.phone_number;
+                    $scope.contactForm.address = contact.address;
+                    $scope.contactForm.id = contact.id;
+                };
+         
+
+				function _refreshcontactData() {
+                    $http({
+                        method : 'GET',
+                        url : 'http://localhost:8080/getAll'
+                        //data: ''//,
+						//headers: { 'Content-Type': 'application/json' }
+                    }).then(function successCallback(response) {
+                        $scope.contacts = response.data;
+                    }, function errorCallback(response) {
+                    	alert(JSON.stringify(response));
+                        console.log(response.statusText);
+                    });
+                }
+				
+				function _success(response) {
+                	alert(JSON.stringify(response));
+                    _refreshcontactData();
+                    _clearFormData()
+                }
+         
+                function _error(response) {
+                	alert(JSON.stringify(response));
+                    console.log(response.statusText);
+                }
+         
+                //Clear the form
+                function _clearFormData() {
+                    $scope.contactForm.id = -1;
+                    $scope.contactForm.name = "";
+                    $scope.contactForm.phone_number = "";
+                    $scope.contactForm.address = "";
+                
+                };
+         
+});
+
+/*
+angular.module('manage', [])
+.controller('ContactController', function($scope, $http) {
+    $http.get('http://localhost:8080/getAll').
+        then(function(response) {
+			alert(JSON.stringify(response));
+            $scope.contacts = response.data;
+        },
+		function(data) {
+        // Handle error here
+			alert(JSON.stringify(data));
+    });
+});
+*/
+
+
+  
+/*
+  var app = angular.module("ContactManagement", []);
+         
+            //Controller Part
+            app.controller("ContactController", function($scope, $http) {
+         
+               $scope.testname="Nagayya";
+               $scope.testphone_number="748634";
+               $scope.testaddress="kelageri";
+			   
+                $scope.contacts = [];
+                $scope.contactForm = {
+                    id : -1,
+                    name : "",
+                    phone_number : ""
+                    address : ""
+                };
+         
+                //Now load the data from server
+                _refreshcontactData();
+         
+                //HTTP POST/PUT methods for add/edit contact 
+                // with the help of id, we are going to find out whether it is put or post operation
+                
+                $scope.submitContact = function() {
+         
+                    var method = "";
+                    var url = "";
+                    if ($scope.contactForm.id == -1) {
+                        //Id is absent in form data, it is create new contact operation
+                        method = "POST";
+                        url = 'http://localhost:8080/addContact';
+                    } else {
+                        //Id is present in form data, it is edit contact operation
+                        method = "POST";
+                        url = 'http://localhost:8080/addContact';
+                    }
+         
+                    $http({
+                        method : method,
+                        url : url,
+                        data : angular.toJson($scope.contactForm),
+                        headers : {
+                            'Content-Type' : 'application/json'
+                        }
+                    }).then( _success, _error );
+                };
+         
+                //HTTP DELETE- delete contact by Id
+                $scope.deleteContact = function(contact) {
+                    $http({
+                        method : 'POST',
+                        url : 'http://localhost:8080/removeContact'
+                    }).then(_success, _error);
+                };
+ 
+             // In case of edit, populate form fields and assign form.id with contact id
+                $scope.editContact = function(contact) {
+                  
+                    $scope.contactForm.name = contact.name;
+                    $scope.contactForm.phone_number = contact.phone_number;
+                    $scope.contactForm.address = contact.address;
+                    $scope.contactForm.id = contact.id;
+                };
+         
+                
+                //HTTP GET- get all contacts collection
+                function _refreshcontactData() {
+                    $http({
+                        method : 'GET',
+                        url : 'http://localhost:8080/getAll&v=' + Date.now()//,
+                        //data: ''//,
+						//headers: { 'Content-Type': 'application/json' }
+                    }).then(function successCallback(response) {
+                        $scope.contacts = response.data;
+                    }, function errorCallback(response) {
+                    	alert(JSON.stringify(response));
+                        console.log(response.statusText);
+                    });
+                }
+         
+                function _success(response) {
+                	alert(JSON.stringify(response));
+                    _refreshcontactData();
+                    _clearFormData()
+                }
+         
+                function _error(response) {
+                	alert(JSON.stringify(response));
+                    console.log(response.statusText);
+                }
+         
+                //Clear the form
+                function _clearFormData() {
+                    $scope.contactForm.id = -1;
+                    $scope.contactForm.name = "";
+                    $scope.contactForm.phone_number = "";
+                    $scope.contactForm.address = "";
+                
+                };
+            });
+			
+			*/

@@ -1,0 +1,32 @@
+package com.phonebook.simplephonebook.rest;
+
+import java.io.IOException;
+import java.nio.file.Paths;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import com.FileSearch;
+
+@RestController
+@EnableAutoConfiguration
+public class ManageContacts {
+
+	
+	@RequestMapping(value ="/search", method=RequestMethod.POST)
+    String home(String path, String text) throws IOException {
+        
+		String report = searchFor(text, Paths.get(path));
+		
+		return "Seraching text:" + text + " in folder: " + path + "is : " + report;
+    }
+
+    public static void main(String[] args) throws Exception {
+        SpringApplication.run(FileSearch.class, args);
+    }
+    
+
+}

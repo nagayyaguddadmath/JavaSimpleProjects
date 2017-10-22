@@ -1,0 +1,42 @@
+package model;
+
+import javax.validation.constraints.Size;
+
+import org.hibernate.validator.constraints.NotEmpty;
+
+/**
+ * @author nagayya
+ *
+ * This class is value object for having COntact Object values
+ */
+public class Contact {
+
+	@Size(min=2, max=30)
+	private String Name;
+	
+	@NotEmpty 
+	private String phoneNumber;
+
+	@NotEmpty 
+	private String address;
+	
+	public String getName() {
+		return Name;
+	}
+	public void setName(String name) {
+		Name = name;
+	}
+	public String getPhoneNumber() {
+		return phoneNumber;
+	}
+	public void setPhoneNumber(String phoneNumber) {
+		this.phoneNumber = phoneNumber;
+	}
+	public String getAddress() {
+		return address;
+	}
+	public void setAddress(String address) {
+		this.address = address;
+	}
+	
+}

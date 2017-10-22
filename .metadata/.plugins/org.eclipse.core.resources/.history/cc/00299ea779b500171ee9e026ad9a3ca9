@@ -1,0 +1,8 @@
+package com.sample.run;
+
+public class PrimeCheck {
+
+	public static void main(String[] args) {
+		
+	}
+}

@@ -1,0 +1,55 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Angular js</title>
+<script src="./angular.min.js"></script>
+
+<script>
+            var app = angular.module("ContactManagement", []);
+</script>
+ 
+</head>
+
+
+    <body ng-app="ContactManagement" >
+         <h1>
+           AngularJS Restful web services example using $http
+        </h1> 
+        <table>
+            <tr>
+              
+                <th>ContactName</th>
+                <th>ContactPhoneNumber</th>
+				<th>address</th>
+                <th>Operations       </th>
+               
+            </tr>
+ 
+            <tr ng-repeat="contact in contacts">
+               
+				<td> {{ contact.Name }}</td>
+				<td >{{ contact.phone_number }}</td>  
+				<td >{{ contact.address }}</td>  
+                
+                <td><a ng-click="editContact(contact)" class="blue-button">Edit</a> | <a ng-click="deleteContact(contact)" class="red-button">Delete</a></td>
+            </tr>
+
+            <tr>
+              
+				<td> {{ testname }}</td>
+				<td >{{ testphone_number }}</td>  
+				<td >{{2+2}}</td>  
+               
+            </tr>
+ 
+        </table>
+ 
+       
+ 
+       
+      
+  </body>
+
+</html>

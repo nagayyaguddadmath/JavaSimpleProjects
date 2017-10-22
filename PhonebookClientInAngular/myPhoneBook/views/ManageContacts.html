@@ -1,0 +1,20 @@
+
+<html ng-app="SimplePhonebook">
+	<head>
+		<title>Manage Contacts using AngularJS</title>
+		 <script src="angular.js"></script>
+        <script src="jquery.min.js"></script>
+		 <script
+  src="angular-resource.js">
+</script>
+		 <script src="./call.js"></script>
+	</head>
+
+	<body>
+		<div ng-controller="contactsctrl">
+			<p>The ID is {{contact}}</p>
+			<p>The content is {{contact.phone_number}}</p>
+			<p>The content is {{2+3}}</p>
+		</div>
+	</body>
+</html>

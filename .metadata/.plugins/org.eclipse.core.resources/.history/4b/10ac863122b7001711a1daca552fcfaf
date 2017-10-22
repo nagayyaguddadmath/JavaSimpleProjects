@@ -1,0 +1,151 @@
+
+<html ng-app="manage">
+<head>
+
+
+<title>Nagayya's PhoneBook Application</title>
+
+<script src="angular.min.js"></script>
+<script src="contact.js"></script>
+
+
+<style>
+.blue-button {
+	background: #25A6E1;
+	filter: progid: DXImageTransform.Microsoft.gradient( startColorstr='#25A6E1',
+		endColorstr='#188BC0', GradientType=0);
+	padding: 3px 5px;
+	color: #fff;
+	font-family: 'Helvetica Neue', sans-serif;
+	font-size: 12px;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 4px;
+	border: 1px solid #1A87B9
+}
+
+.red-button {
+	background: #CD5C5C;
+	padding: 3px 5px;
+	color: #fff;
+	font-family: 'Helvetica Neue', sans-serif;
+	font-size: 12px;
+	border-radius: 2px;
+	-moz-border-radius: 2px;
+	-webkit-border-radius: 4px;
+	border: 1px solid #CD5C5C
+}
+
+table {
+	font-family: "Helvetica Neue", Helvetica, sans-serif;
+	width: 50%;
+}
+
+caption {
+	text-align: left;
+	color: silver;
+	font-weight: bold;
+	text-transform: uppercase;
+	padding: 5px;
+}
+
+th {
+	background: SteelBlue;
+	color: white;
+}
+
+tbody tr:nth-child(even) {
+	background: WhiteSmoke;
+}
+
+tbody tr td:nth-child(2) {
+	text-align: center;
+}
+
+tbody tr td:nth-child(3), tbody tr td:nth-child(4) {
+	text-align: center;
+	font-family: monospace;
+}
+
+tfoot {
+	background: SeaGreen;
+	color: white;
+	text-align: right;
+}
+
+tfoot tr th:last-child {
+	font-family: monospace;
+}
+
+td, th {
+	border: 1px solid gray;
+	width: 25%;
+	text-align: left;
+	padding: 5px 10px;
+}
+</style>
+<head>
+<body>
+	<h1>Phonebook Application using AngularJS Restful web services example using $http</h1>
+	<div ng-controller="ContactController">
+
+		<form>
+			<table>
+
+				<tr>
+					<th colspan="2">Add/Edit Contact</th>
+				</tr>
+				<tr>
+					<td>Contact Name</td>
+					<td><input type="text" ng-model="contactForm.name" /></td>
+				</tr>
+				<tr>
+					<td>Contact Phone Number</td>
+					<td><input type="text" ng-model="contactForm.phone_number" /></td>
+				</tr>
+				<tr>
+					<td>Contact Address</td>
+					<td><input type="text" ng-model="contactForm.address" /></td>
+				</tr>
+				<tr>
+					<td colspan="2">
+					<button ng-click="submitContact()"  class="blue-button" >Save</button>
+					<button ng-click="submitFilter()" class="blue-button" >Filter</button>
+					<button ng-click="showAll()" class="blue-button" >Show-All</button>
+					<button ng-click="updateContact()" class="blue-button" >Update</button>
+					
+					</td>
+				</tr>
+			</table>
+		</form>
+		<table>
+			<tr>
+
+				<th>ContactName</th>
+				<th>ContactPhoneNumber</th>
+				<th>address</th>
+				<th>Operations</th>
+
+			</tr>
+
+			<tr ng-repeat="contact in contacts">
+
+				<td>{{ contact.name }}</td>
+				<td>{{ contact.phone_number }}</td>
+				<td>{{ contact.address }}</td>
+
+				<td>
+				<button ng-click="editContact(contact)" class="blue-button">Edit</button>
+					| <button ng-click="deleteContact(contact)" class="red-button">Delete</button>
+				</td>
+			</tr>
+
+
+		</table>
+	</div>
+
+
+
+</body>
+</html>
+

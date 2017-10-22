@@ -1,0 +1,88 @@
+package com.phonebook.simplephonebook.rest;
+
+import java.io.IOException;
+import java.util.ArrayList;
+import java.util.List;
+
+import org.springframework.boot.SpringApplication;
+import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
+import org.springframework.web.bind.MethodArgumentNotValidException;
+import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RestController;
+
+import model.Contact;
+
+/**
+ * @author nagayya
+ *
+ * This class exposes REST web services for managing (CRUD Operations) of basic phonebook application
+ * Please note that this application will not store the given contacts to any database
+ * Database addition will be added in next version (if needed)
+ */
+@RestController
+@EnableAutoConfiguration
+public class ManageContacts {
+
+	private List<Contact> allContacts = new ArrayList<Contact>();
+
+	public static void main(String[] args) throws Exception {
+		SpringApplication.run(ManageContacts.class, args);
+	}
+
+
+	@RequestMapping(value ="/addContact", method=RequestMethod.POST)
+	Contact addContact(Contact contact) throws MethodArgumentNotValidException {
+		allContacts.add(contact);
+		return contact;
+	}
+
+	@RequestMapping(value ="/addContacts", method=RequestMethod.POST)
+	List<Contact> addContacts(List<Contact> contacts) throws MethodArgumentNotValidException {
+		allContacts.addAll(contacts);
+		return contacts;
+	}
+
+	@RequestMapping(value ="/removeContact", method=RequestMethod.POST)
+	Contact removeContact(Contact contact) throws MethodArgumentNotValidException {
+		allContacts.remove(contact);
+		return contact;
+
+	}
+
+	@RequestMapping(value ="/getContactByName", method=RequestMethod.GET)
+	List<Contact> getContactByName(String name) throws MethodArgumentNotValidException {
+		if (name == null || name.length() < 1) {
+			return null;
+		}
+		List<Contact> outContacts = new ArrayList<Contact>();
+		for (Contact contact: allContacts) {
+			if (contact.getName().contains(name)) {
+				outContacts.add(contact);
+			}
+		}
+
+		return outContacts;
+	}
+
+
+	@RequestMapping(value ="/searchContacts", method=RequestMethod.POST)
+	List<Contact> searchContacts(Contact inContact) throws MethodArgumentNotValidException {
+		List<Contact> outContacts = new ArrayList<Contact>();
+		for (Contact contact: allContacts) {
+			if (contact.getName().contains(inContact.getName())) {
+				outContacts.add(contact);
+			}
+			if (contact.getPhoneNumber().contains(inContact.getPhoneNumber())) {
+				outContacts.add(contact);
+			}
+			if (contact.getAddress().contains(inContact.getName())) {
+				outContacts.add(contact);
+			}
+		}
+
+		return outContacts;
+	}
+
+
+}

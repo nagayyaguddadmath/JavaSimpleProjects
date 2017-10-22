@@ -1,0 +1,35 @@
+package com.phonebook.simplephonebook.rest;
+
+
+
+import org.springframework.validation.Errors;
+import org.springframework.validation.Validator;
+
+import model.Contact;
+
+
+public class ContactValidator implements Validator {
+
+	@Override
+	public boolean supports(Class<?> clazz) {
+		return Contact.class.equals(clazz);
+	}
+
+	@Override
+	public void validate(Object arg0, Errors arg1) {
+		Contact user = (Contact) obj;
+		if (checkInputString(user.getName())) {
+			errors.rejectValue("name", "name.empty");
+		}
+
+		if (checkInputString(user.getEmail())) {
+			errors.rejectValue("email", "email.empty");
+		}
+	}
+
+	private boolean checkInputString(String input) {
+		return (input == null || input.trim().length() == 0);
+	}
+
+}
+}

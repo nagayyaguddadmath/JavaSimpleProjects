@@ -1,0 +1,5 @@
+package com.phonebook.simplephonebook.rest;
+
+public class ValidateContact {
+
+}
