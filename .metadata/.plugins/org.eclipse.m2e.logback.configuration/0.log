@@ -1412,3 +1412,16 @@
 2017-10-22 13:26:19,563 [Worker-172] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\nagayya\Documents\GitHub\SampleLearning\simplephonebook\src\main\resources
 2017-10-22 13:26:19,564 [Worker-172] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
 2017-10-22 13:26:19,564 [Worker-172] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\nagayya\Documents\GitHub\SampleLearning\simplephonebook\src\test\resources
+2017-10-22 13:52:13,785 [Worker-183] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-10-22 13:52:13,790 [Worker-183] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\nagayya\Documents\GitHub\SampleLearning\simplephonebook\src\main\resources
+2017-10-22 13:52:13,790 [Worker-183] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\nagayya\Documents\GitHub\SampleLearning\simplephonebook\src\main\resources
+2017-10-22 13:52:13,791 [Worker-183] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-10-22 13:52:13,791 [Worker-183] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\nagayya\Documents\GitHub\SampleLearning\simplephonebook\src\test\resources
+2017-10-22 13:54:47,219 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-10-22 13:54:47,219 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\nagayya\Documents\GitHub\SampleLearning\simplephonebook\src\main\resources
+2017-10-22 13:54:47,219 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\nagayya\Documents\GitHub\SampleLearning\simplephonebook\src\main\resources
+2017-10-22 13:54:47,221 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
+2017-10-22 13:54:47,221 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\nagayya\Documents\GitHub\SampleLearning\simplephonebook\src\test\resources
+2017-10-22 13:54:47,222 [Worker-188] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Changed resources require a complete clean of filtered resources of simplephonebook
+2017-10-22 13:54:47,222 [Worker-188] INFO  o.e.m.w.i.f.ResourceFilteringBuildParticipant - Executing resource filtering for simplephonebook
+2017-10-22 13:54:47,227 [Worker-188] INFO  o.e.m.c.i.embedder.EclipseLogger - Using 'UTF-8' encoding to copy filtered resources.
