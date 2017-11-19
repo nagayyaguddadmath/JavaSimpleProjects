@@ -2,10 +2,12 @@
 <section name="Workbench">
 	<section name="MavenProjectWizardArtifactPage">
 		<list key="groupId">
+			<item value="loanapp"/>
 		</list>
 		<list key="name">
 		</list>
 		<list key="artifactId">
+			<item value="quote"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>
@@ -42,8 +44,25 @@
 			<item value="[name]"/>
 		</list>
 	</section>
+	<section name="wizardPage">
+		<list key="groupId">
+			<item value="multiplecontrollerspringmvc"/>
+		</list>
+		<list key="name">
+		</list>
+		<list key="artifactId">
+			<item value="multiplecontrollerspringmvc"/>
+		</list>
+		<list key="version">
+			<item value="0.0.1-SNAPSHOT"/>
+		</list>
+	</section>
 	<section name="MavenProjectWizardLocationPage">
 		<list key="location">
+			<item value="C:\Users\nagayya\Documents\GitHub\SampleLearning\reversecalculator"/>
+			<item value="C:\Users\nagayya\Documents\GitHub\assignment"/>
+			<item value="C:\Users\nagayya\Documents\GitHub\SampleLearning\reversecalculator\src\main\java\com\src\calculator\reversecalculator\StartCalculaterApp.java"/>
+			<item value="C:\Users\nagayya\Documents\GitHub\SampleLearning\PhonebookClientInAngular"/>
 			<item value="C:\Users\nagayya\Documents\GitHub\SampleLearning\sample"/>
 		</list>
 		<list key="projectNameTemplate">
@@ -57,13 +76,10 @@
 	</section>
 	<section name="Maven2ProjectWizardArchifactPage">
 		<list key="package">
-			<item value="com.phonebook.simplephonebook"/>
 		</list>
 		<list key="groupId">
-			<item value="com.phonebook"/>
 		</list>
 		<list key="artifactId">
-			<item value="simplephonebook"/>
 		</list>
 		<list key="projectNameTemplate">
 			<item value="[artifactId]"/>

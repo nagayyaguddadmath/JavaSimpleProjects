@@ -1,0 +1,5 @@
+package firstgroovy;
+
+class FirstGroovy {
+
+}

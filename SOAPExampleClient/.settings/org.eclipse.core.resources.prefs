@@ -1,0 +1,6 @@
+eclipse.preferences.version=1
+encoding//src/com/ng/model/Person.java=UTF-8
+encoding//src/com/ng/service/PersonServiceImpl.java=UTF-8
+encoding//src/com/ng/service/PersonServiceImplService.java=UTF-8
+encoding//src/com/ng/service/PersonServiceImplServiceLocator.java=UTF-8
+encoding//src/com/ng/service/PersonServiceImplSoapBindingStub.java=UTF-8
