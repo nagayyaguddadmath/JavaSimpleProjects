@@ -36,13 +36,14 @@ public class MainApplication {
 		if (args.length != 2) {
 			throw new IllegalArgumentException(NOTVALIDARG +args); 
 		}
+		BigDecimal amount;
 		try {
-			BigDecimal amount = new BigDecimal(args[1]);
-			if (checkvalidAmount(amount)) {
-				throw new IllegalArgumentException(NOTVALIDAMOUNT +amount.toString()); 
-			}
+			amount = new BigDecimal(args[1]);
 		} catch(NumberFormatException e) {
 			throw new IllegalArgumentException(NOTVALIDARG +args[1]); 
+		}
+		if (checkvalidAmount(amount)) {
+			throw new IllegalArgumentException(NOTVALIDAMOUNT +amount.toString()); 
 		}
 	}
 
@@ -50,7 +51,7 @@ public class MainApplication {
 		return (amount.compareTo(BigDecimal.valueOf(1000)) < 0 || amount.compareTo(BigDecimal.valueOf(15000)) > 0 ||
 				!amount.remainder(BigDecimal.valueOf(100)).equals(BigDecimal.ZERO));
 	}
-	
+
 	public static final String REQAMOUNTSTRING = "Requested amount: £";
 	public static final String RATESTRING = "Rate: ";
 	public static final String MONTHLYAMOUNTSTRING = "Monthly repayment:";
